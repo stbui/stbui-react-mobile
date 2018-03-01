@@ -25,7 +25,10 @@ class App extends Component {
           <section>
             <Switch key={location.pathname} location={location}>
               <Route exact path="/" component={AsyncComponent(() => import('../pages/Index'))} />
+              <Route path="/checkbox" component={AsyncComponent(() => import('../pages/CheckboxPage'))} />
+              <Route path="/radio" component={AsyncComponent(() => import('../pages/RadioPage'))} />
               <Route path="/cell" component={AsyncComponent(() => import('../pages/CellPage'))} />
+
 
               {/* 表单组件 */}
               {/* <Route path="/checkbox" component={AsyncComponent(() => import('../pages/CheckboxPage'))} />
