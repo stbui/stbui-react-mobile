@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Panel, Cell, Tab } from 'stbui';
+import { Panel, Tab } from 'stbui';
 import Container from '../components/Container';
 import Header from '../components/Header';
 
@@ -34,7 +34,9 @@ class Page extends Component {
           <Panel.Body>
             <Tab>
               <Tab.Panel title="选项卡1">选项卡1内容</Tab.Panel>
-              <Tab.Panel title="选项卡2" disabled>选项卡2内容</Tab.Panel>
+              <Tab.Panel title="选项卡2" disabled>
+                选项卡2内容
+              </Tab.Panel>
               <Tab.Panel title="选项卡3">选项卡3内容</Tab.Panel>
             </Tab>
           </Panel.Body>

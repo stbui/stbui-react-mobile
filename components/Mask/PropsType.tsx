@@ -1,5 +1,5 @@
 export interface PropsType {
   visible?: boolean;
-  type?:string;
+  type?: string;
   onClick?: () => void;
 }

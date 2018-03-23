@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Panel, Cell, Message } from 'stbui';
+import { Panel, Message } from 'stbui';
 import Container from '../components/Container';
 import Header from '../components/Header';
 

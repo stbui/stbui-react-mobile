@@ -1,19 +1,17 @@
 import styled, { css } from 'styled-components';
 
-const disabled = ({ disabled }) =>
-  disabled &&
-  css`
-    cursor: not-allowed;
-    opacity: 0.5;
-  `;
-
 export const Wrapper = styled<any, 'div'>('div')`
   position: relative;
   width: 100%;
   margin: 14px 0;
   padding: 0 14px;
 
-  ${disabled};
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      cursor: not-allowed;
+      opacity: 0.5;
+    `};
 `;
 
 export const Line = styled.div`

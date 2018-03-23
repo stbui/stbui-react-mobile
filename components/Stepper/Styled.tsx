@@ -1,19 +1,11 @@
 import styled, { css } from 'styled-components';
 
-const disabled = ({ disabled }) =>
-  disabled &&
-  css`
-    color: #bbb;
-    border-color: #e1e1e1;
-    cursor: not-allowed;
-  `;
-
 export const Wrapper = styled.span`
   display: flex;
   user-select: none;
 `;
 
-export const Button = styled.span`
+export const Button = styled<any, any>('span')`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,7 +20,13 @@ export const Button = styled.span`
   color: #f00;
   border: 1px solid #f00;
 
-  ${disabled};
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      color: #bbb;
+      border-color: #e1e1e1;
+      cursor: not-allowed;
+    `};
 `;
 
 export const Input = styled.input`

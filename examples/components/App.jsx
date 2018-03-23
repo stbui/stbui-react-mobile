@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
-// import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import AsyncComponent from './AsyncComponent';
 import Header from './Header';
 
 class App extends Component {
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   render() {
-    const { history, location, match } = this.props;
-    const currentKey = location.pathname.split('/')[1] || '/';
     return (
       <div>
         <Header>stbui组件</Header>
@@ -83,8 +79,14 @@ class App extends Component {
               path="/accordion"
               component={AsyncComponent(() => import('../pages/AccordionPage'))}
             />
-            <Route path="/badge" component={AsyncComponent(() => import('../pages/BadgePage'))} />
-            <Route path="/toast" component={AsyncComponent(() => import('../pages/ToastPage'))} />
+            <Route
+              path="/badge"
+              component={AsyncComponent(() => import('../pages/BadgePage'))}
+            />
+            <Route
+              path="/toast"
+              component={AsyncComponent(() => import('../pages/ToastPage'))}
+            />
 
             {/* 表单组件 */}
             {/* <Route path="/checkbox" component={AsyncComponent(() => import('../pages/CheckboxPage'))} />

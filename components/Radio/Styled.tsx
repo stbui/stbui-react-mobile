@@ -1,26 +1,5 @@
 import styled, { css } from 'styled-components';
 
-const checked = ({ checked }) =>
-  checked &&
-  css`
-    border-color: #f00;
-    &:before {
-      transform: scale(1);
-      transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-    }
-  `;
-
-const disabled = ({ disabled }) =>
-  disabled &&
-  css`
-    border-color: #bbb;
-    cursor: not-allowed;
-
-    &:before {
-      background-color: #bbb;
-    }
-  `;
-
 export const Container = styled.div`
   display: inline-block;
   position: relative;
@@ -54,7 +33,26 @@ export const Inner = styled<any, any>('span')`
     transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6);
   }
 
-  ${checked}${disabled}
+  ${({ checked }) =>
+    checked &&
+    css`
+      border-color: #f00;
+      &:before {
+        transform: scale(1);
+        transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+      }
+    `};
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      border-color: #bbb;
+      cursor: not-allowed;
+
+      &:before {
+        background-color: #bbb;
+      }
+    `};
 `;
 
 export const Input = styled.input`
@@ -69,6 +67,6 @@ export const Input = styled.input`
 `;
 
 export const Text = styled<any, 'span'>('span')`
-  color: ${props => (props.disabled ? ` #bbb;` : '#333')};
+  color: ${({ disabled }) => (disabled ? ` #bbb;` : '#333')};
   margin-left: 10px;
 `;

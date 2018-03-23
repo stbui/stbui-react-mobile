@@ -12,7 +12,6 @@ const Wrapper = styled.div`
 class Container extends Component {
   componentDidMount() {
     // if (this.props.className !== 'index-page') return;
-
     // const scrollTop = window.sessionStorage[this.props.className];
     // if (scrollTop) {
     //   this.container.scrollTop = scrollTop;
@@ -21,14 +20,12 @@ class Container extends Component {
 
   componentWillUnmount() {
     // if (this.props.className !== 'index-page') return;
-
     // const scrollTop = this.container.scrollTop;
     // window.sessionStorage[this.props.className] = scrollTop;
   }
 
   render() {
-    const { className, children } = this.props;
-
+    const { children } = this.props;
 
     return (
       <Wrapper
