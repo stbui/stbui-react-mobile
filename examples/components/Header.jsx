@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  padding: 15px;
+  padding: 10px;
   font-size: 16px;
+  display: flex;
+  justify-content: center;
 `;
 
 class Header extends Component {
   render() {
-    const { title } = this.props;
+    const { children } = this.props;
 
-    return <Wrapper>{title}</Wrapper>;
+    return <Wrapper>{children}</Wrapper>;
   }
 }
 

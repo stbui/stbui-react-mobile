@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Panel, Cell } from 'stbui';
+import styled from 'styled-components';
 import Container from '../components/Container';
 import Header from '../components/Header';
-import styled from 'styled-components';
 
 const Box = styled.div``;
 const BoxTitle = styled.div``;

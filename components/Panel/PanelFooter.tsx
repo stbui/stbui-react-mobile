@@ -11,18 +11,12 @@ const Wrapper = styled.div`
   font-size: 12px;
 `;
 
-export interface PanelFooterProps extends BasePanelFooterProps {
-  prefixCls?: string;
-  className?: string;
-}
-
-export default class PanelFooter extends PureComponent<PanelFooterProps, {}> {
+export default class PanelFooter extends PureComponent<BasePanelFooterProps, {}> {
   static defaultProps = {
-    prefixCls: 'panel'
   };
 
   render() {
-    const { title,...others } = this.props;
+    const { title, ...others } = this.props;
 
     return <Wrapper {...others}>{title && <Title>{title}</Title>}</Wrapper>;
   }

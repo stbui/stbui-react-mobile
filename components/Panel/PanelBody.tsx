@@ -36,15 +36,10 @@ const Wrapper = styled.div`
   }
 `;
 
-export interface PanelBodyProps {
-  prefixCls?: string;
-  className?: string;
-}
+interface PanelBodyProps {}
 
 export default class PanelBody extends PureComponent<PanelBodyProps, {}> {
-  static defaultProps = {
-    prefixCls: 'panel'
-  };
+  static defaultProps = {};
 
   render() {
     const { children, ...others } = this.props;

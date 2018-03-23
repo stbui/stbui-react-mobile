@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import classnames from 'classnames';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -12,36 +11,30 @@ const Wrapper = styled.div`
 
 class Container extends Component {
   componentDidMount() {
-    if (this.props.className !== 'index-page') return;
+    // if (this.props.className !== 'index-page') return;
 
-    const scrollTop = window.sessionStorage[this.props.className];
-    if (scrollTop) {
-      this.container.scrollTop = scrollTop;
-    }
+    // const scrollTop = window.sessionStorage[this.props.className];
+    // if (scrollTop) {
+    //   this.container.scrollTop = scrollTop;
+    // }
   }
 
   componentWillUnmount() {
-    if (this.props.className !== 'index-page') return;
+    // if (this.props.className !== 'index-page') return;
 
-    const scrollTop = this.container.scrollTop;
-    window.sessionStorage[this.props.className] = scrollTop;
+    // const scrollTop = this.container.scrollTop;
+    // window.sessionStorage[this.props.className] = scrollTop;
   }
 
   render() {
     const { className, children } = this.props;
 
-    const cls = classnames({
-      'app-container': true,
-      [className]: !!className
-    });
 
     return (
       <Wrapper
         ref={ele => {
           this.container = ele;
         }}
-        className={cls}
-        style={{ height: window.innerHeight }}
       >
         {children}
       </Wrapper>

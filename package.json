@@ -1,5 +1,5 @@
 {
-  "name": "stbui",
+  "name": "@stbui/react",
   "version": "0.0.1",
   "description": "基于 React 的移动端UI库",
   "license": "MIT",
@@ -10,7 +10,7 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "start": "npm run deploy && npm run dev",
+    "start": "npm run dev",
     "clean": "rm -rf lib es dist .temp",
     "dev": "webpack-dev-server --config scripts/webpack/config.dev.js",
     "build:es": "tsc --outDir es -d",

@@ -1,26 +1,16 @@
 import React, { PureComponent } from 'react';
-import styled from 'styled-components';
 
-const Wrapper = styled.div`
-`;
-
-export interface PanelProps {
-  prefixCls?: string;
-  className?: string;
-}
+interface PanelProps {}
 
 export default class Panel extends PureComponent<PanelProps, {}> {
-
   static Header: any;
   static Body: any;
   static Footer: any;
 
-  static defaultProps = {
-    prefixCls: 'panel',
-  };
+  static defaultProps = {};
 
   render() {
-    const {children } = this.props;
-    return <Wrapper>{children}</Wrapper>
+    const { children } = this.props;
+    return <div>{children}</div>;
   }
 }

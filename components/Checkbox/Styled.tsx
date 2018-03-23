@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: inline-block;
@@ -13,12 +13,7 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
-interface InnerPrpos {
-  checked?: boolean;
-  disabled?: boolean;
-}
-
-export const Inner = styled<InnerPrpos, 'span'>('span')`
+export const Inner = styled<any, any>('span')`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,15 +35,25 @@ export const Inner = styled<InnerPrpos, 'span'>('span')`
     transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6);
   }
 
-  ${props => (props.checked ? checked() : '')};
-  ${props => (props.disabled ? disabled() : '')};
-`;
-export const InnerChecked = Inner.extend`
-  border-color: #f00;
-  &:before {
-    transform: rotate(45deg) scale(1);
-    transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-  }
+  ${({ checked }) =>
+    checked &&
+    css`
+      border-color: #f00;
+      &:before {
+        transform: rotate(45deg) scale(1);
+        transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+      }
+    `};
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      border-color: #bbb;
+      cursor: not-allowed;
+
+      &:before {
+        border-color: #bbb;
+      }
+    `};
 `;
 
 export const Input = styled.input`
@@ -58,7 +63,6 @@ export const Input = styled.input`
   width: 100%;
   height: 100%;
   opacity: 0;
-  // default css
   margin: 0;
 `;
 
@@ -70,23 +74,3 @@ export const Text = styled<TextProps, 'span'>('span')`
   color: ${props => (props.disabled ? ` #bbb;` : '#333')};
   margin-left: 10px;
 `;
-
-function checked() {
-  return `
-  border-color: #f00;
-  &:before {
-    transform: rotate(45deg) scale(1);
-    transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-  }`;
-}
-
-function disabled() {
-  return `
-  border-color: #bbb;
-  cursor: not-allowed;
-
-  &:before {
-    border-color: #bbb;
-  }
-  `;
-}
