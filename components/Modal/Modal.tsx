@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import { PropsType } from './PropsType';
-import { Wrapper, StyledPortal } from './Styled';
+import { Wrapper } from './Styled';
 import Portal from '../Portal';
 
-export default class Toast extends PureComponent<PropsType, any> {
+export default class Modal extends PureComponent<PropsType, any> {
+  static Header: any;
+
   private timer: number;
   static defaultProps = {
     delay: 3000
@@ -24,12 +26,7 @@ export default class Toast extends PureComponent<PropsType, any> {
     return true;
   }
 
-  componentDidMount() {
-    const { delay } = this.props;
-    this.timer = setTimeout(() => {
-      this.onClose();
-    }, delay);
-  }
+  componentDidMount() {}
 
   componentWillUnmount() {
     clearTimeout(this.timer);
@@ -49,11 +46,7 @@ export default class Toast extends PureComponent<PropsType, any> {
 
     return (
       show && (
-        <Portal
-          type="transparent"
-          onClick={this.handleClick}
-          style={StyledPortal}
-        >
+        <Portal type="transparent">
           <Wrapper>{children}</Wrapper>
         </Portal>
       )

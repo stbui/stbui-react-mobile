@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { createPortal } from 'react-dom';
-import { PropsType } from './PropsType';
+// import { PropsType } from './PropsType';
 import { Wrapper } from './Styled';
 
 export default class Portal extends PureComponent<any, any> {
@@ -17,11 +17,11 @@ export default class Portal extends PureComponent<any, any> {
   }
 
   render() {
-    const { type, ...other } = this.props;
+    const { children, type, onClick, ...other } = this.props;
 
     return createPortal(
-      <Wrapper type={type} {...other}>
-        {this.props.children}
+      <Wrapper type={type} onClick={onClick} {...other}>
+        {children}
       </Wrapper>,
       this.node
     );

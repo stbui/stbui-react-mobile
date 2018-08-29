@@ -7,6 +7,8 @@ class App extends Component {
   componentDidMount() {}
 
   render() {
+    const { history, location, match } = this.props;
+
     return (
       <div>
         <Header>stbui组件</Header>
@@ -86,6 +88,10 @@ class App extends Component {
             <Route
               path="/toast"
               component={AsyncComponent(() => import('../pages/ToastPage'))}
+            />
+            <Route
+              path="/nav-bar"
+              component={AsyncComponent(() => import('../pages/NavBarPage'))}
             />
 
             {/* 表单组件 */}

@@ -16,7 +16,6 @@ export const Wrapper = styled.div`
     border: 0;
     outline: 0;
     -webkit-appearance: none;
-    
     font-size: 100%;
 
     &::-webkit-input-placeholder {

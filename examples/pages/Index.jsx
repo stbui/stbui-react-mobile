@@ -171,6 +171,36 @@ class Page extends PureComponent {
               description="标签页"
               onClick={() => history.push('/tab')}
             />
+            <Cell
+              hasArrow
+              title="NavBar"
+              description="导航栏"
+              onClick={() => history.push('/nav-bar')}
+            />
+            <Cell
+              hasArrow
+              title="Upload"
+              description="图片上传"
+              onClick={() => history.push('/nav-bar')}
+            />
+            <Cell
+              hasArrow
+              title="Search"
+              description="搜索"
+              onClick={() => history.push('/nav-bar')}
+            />
+            <Cell
+              hasArrow
+              title="Area"
+              description="省市县选择"
+              onClick={() => history.push('/nav-bar')}
+            />
+            <Cell
+              hasArrow
+              title="navigation"
+              description="导航栏"
+              onClick={() => history.push('/nav-bar')}
+            />
           </Panel.Body>
         </Panel>
 
